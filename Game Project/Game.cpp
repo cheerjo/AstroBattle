@@ -1,6 +1,8 @@
 #include "Game.h"
 #include <SDL_image.h>
 #include <iostream>
+#include "MenuState.h"
+#include "PlayState.h"
 
 Game* Game::s_pInstance = 0;
 
@@ -47,21 +49,15 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	}
 	std::cout << "init success\n";
 	m_bRunning = true;
-	//loading
-	if (!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer))
-	{
-		return false;
-	}
-	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
-	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
+	
+	m_pGameStateMachine = new GameStateMachine();
+	m_pGameStateMachine->changeState(new MenuState());
+	
 	return true;
 }
 void Game::update()
 {
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
+	m_pGameStateMachine->update();
 }
 void Game::render()
 {
@@ -69,10 +65,7 @@ void Game::render()
 	//clear window to black
 	SDL_RenderClear(m_pRenderer);
 
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw();
-	}
+	m_pGameStateMachine->render();
 
 	//show window
 	SDL_RenderPresent(m_pRenderer);
@@ -90,13 +83,13 @@ void Game::clean()
 void Game::handleEvents()
 {
 	TheInputHandler::Instance()->update();
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+	{
+		m_pGameStateMachine->changeState(new PlayState());
+	}
 }
 Game::Game()
 {
 
-}
-
-void Game::quit()
-{
-	SDL_Quit();
 }

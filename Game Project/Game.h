@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include <vector>
+#include "GameStateMachine.h"
 
 class Game
 {
@@ -33,8 +34,8 @@ public:
 	void handleEvents();
 	//clean up
 	void clean();
-	//quit (calls SDL_Quit())
-	void quit();
+	//quit (sets m_bRunning to false)
+	void quit() { m_bRunning = false; }
 
 	//function to access private running variable
 	bool running(){
@@ -55,5 +56,7 @@ private:
 	GameObject* m_player;
 	GameObject* m_enemy;
 	std::vector<GameObject*> m_gameObjects;
+
+	GameStateMachine* m_pGameStateMachine;
 };
 typedef Game TheGame;
