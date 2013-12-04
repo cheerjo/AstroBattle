@@ -19,6 +19,14 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\animate-alpha.png" />
+    <Image Include="assets\animate.bmp" />
+    <Image Include="assets\animate.png" />
+    <Image Include="assets\helicopter.png" />
+    <Image Include="assets\helicopter2.png" />
+    <Image Include="assets\rider.bmp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D24273D9-7D48-4CF6-AEC9-EA868886F2A1}</ProjectGuid>
     <RootNamespace>GameProject</RootNamespace>

@@ -33,4 +33,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\animate.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\animate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\animate-alpha.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\helicopter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\helicopter2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\rider.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
