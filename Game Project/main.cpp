@@ -2,7 +2,7 @@
 #define SDL_main main
 
 SDL_Window* g_pWindow = 0;
-SDL_Renderer* g_pRenderer = 0;
+SDL_Renderer* g_pRenderer = 00;
 
 int main(int argc, char *argv[])
 {
