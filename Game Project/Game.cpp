@@ -1,6 +1,9 @@
 #include "Game.h"
 #include <SDL_image.h>
 #include <iostream>
+
+Game* Game::s_pInstance = 0;
+
 bool Game::init(const char* title, int xpos, int ypos, int height, int width, bool fullscreen)
 {
 	int flags = 0;
@@ -49,14 +52,16 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	{
 		return false;
 	}
-	m_go.load(100, 100, 128, 82, "animate");
-	m_player.load(300, 300, 129, 82, "animate");
+	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
+	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
 	return true;
 }
 void Game::update()
 {
-	m_go.update();
-	m_player.update();
+	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->update();
+	}
 }
 void Game::render()
 {
@@ -64,8 +69,10 @@ void Game::render()
 	//clear window to black
 	SDL_RenderClear(m_pRenderer);
 
-	m_go.draw(m_pRenderer);
-	m_player.draw(m_pRenderer);
+	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->draw();
+	}
 
 	//show window
 	SDL_RenderPresent(m_pRenderer);
@@ -94,4 +101,8 @@ void Game::handleEvents()
 			break;
 		}
 	}
+}
+Game::Game()
+{
+
 }
