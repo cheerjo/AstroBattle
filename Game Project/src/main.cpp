@@ -32,6 +32,6 @@ int main(int argc, char *argv[])
 		std::cout << "game init failure - " << SDL_GetError() << "\n";
 		return -1;
 	}
-		TheGame::Instance()->clean();
-		return 0;
+	TheGame::Instance()->clean();
+	return 0;
 }
