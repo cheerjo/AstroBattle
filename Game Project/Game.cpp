@@ -80,6 +80,7 @@ void Game::render()
 
 void Game::clean()
 {
+	TheInputHandler::Instance()->clean();
 	std::cout << "cleaning game\n";
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
@@ -88,21 +89,14 @@ void Game::clean()
 
 void Game::handleEvents()
 {
-	SDL_Event event;
-	if (SDL_PollEvent(&event))
-	{
-		switch (event.type)
-		{
-		case SDL_QUIT:
-			m_bRunning = false;
-			break;
-
-		default:
-			break;
-		}
-	}
+	TheInputHandler::Instance()->update();
 }
 Game::Game()
 {
 
+}
+
+void Game::quit()
+{
+	SDL_Quit();
 }

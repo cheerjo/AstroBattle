@@ -33,6 +33,8 @@ public:
 	void handleEvents();
 	//clean up
 	void clean();
+	//quit (calls SDL_Quit())
+	void quit();
 
 	//function to access private running variable
 	bool running(){
