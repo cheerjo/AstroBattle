@@ -12,10 +12,6 @@ void MainMenuState::update()
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
-		if (m_gameObjects.size()>700000)
-		{
-			break;
-		}
 		m_gameObjects[i]->update();
 	}
 }
@@ -45,12 +41,8 @@ bool MainMenuState::onEnter()
 
 bool MainMenuState::onExit()
 {
-	for (int i = 0; i < m_textureIDList.size(); i++)
-	{
-		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
-	}
 	std::cout << "Exiting MainMenuState\n";
-	return true;
+	return GameState::onExit();
 }
 void MainMenuState::setCallbacks(const std::vector<Callback>& callbacks)
 {

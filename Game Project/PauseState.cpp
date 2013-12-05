@@ -18,10 +18,6 @@ void PauseState::update()
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
-		if (m_gameObjects.size()>700000)
-		{
-			break;
-		}
 		m_gameObjects[i]->update();
 	}
 }
@@ -49,15 +45,11 @@ bool PauseState::onEnter()
 
 bool PauseState::onExit()
 {
-	for (int i = 0; i < m_textureIDList.size(); i++)
-	{
-		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
-	}
 	TheInputHandler::Instance()->reset();
 
 	std::cout << "exiting PauseState\n";
 
-	return true;
+	return GameState::onExit();
 }
 void PauseState::setCallbacks(const std::vector<Callback>& callbacks)
 {

@@ -4,6 +4,7 @@
 #include "MainMenuState.h"
 #include "PlayState.h"
 #include "MenuButton.h"
+#include "AnimatedGraphic.h"
 
 Game* Game::s_pInstance = 0;
 
@@ -55,6 +56,7 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
 	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 	m_pGameStateMachine->changeState(new MainMenuState());
 	
 	return true;

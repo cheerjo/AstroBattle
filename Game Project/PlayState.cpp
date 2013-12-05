@@ -5,7 +5,7 @@
 #include "Game.h"
 #include "PauseState.h"
 #include "GameOverState.h"
-#include "StateParser.h"
+#include "MenuState.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -46,12 +46,9 @@ bool PlayState::onEnter()
 
 bool PlayState::onExit()
 {
-	for (int i = 0; i < m_textureIDList.size(); i++)
-	{
-		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
-	}
+	
 	std::cout << "Exiting PlayState\n";
-	return true;
+	return GameState::onExit();
 }
 
 bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)
