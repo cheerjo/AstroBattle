@@ -43,8 +43,14 @@
     <Image Include="assets\animate-alpha.png" />
     <Image Include="assets\animate.bmp" />
     <Image Include="assets\animate.png" />
+    <Image Include="assets\button.png" />
+    <Image Include="assets\exit.png" />
+    <Image Include="assets\gameover.png" />
     <Image Include="assets\helicopter.png" />
     <Image Include="assets\helicopter2.png" />
+    <Image Include="assets\main.png" />
+    <Image Include="assets\restart.png" />
+    <Image Include="assets\resume.png" />
     <Image Include="assets\rider.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

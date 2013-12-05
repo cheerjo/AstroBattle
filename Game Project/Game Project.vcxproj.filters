@@ -112,5 +112,23 @@
     <Image Include="assets\rider.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\button.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\exit.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\gameover.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\main.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\restart.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\resume.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
