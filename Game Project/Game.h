@@ -6,7 +6,7 @@
 #include "Enemy.h"
 #include <vector>
 #include "GameStateMachine.h"
-
+class GameStateMachine;
 class Game
 {
 public:
