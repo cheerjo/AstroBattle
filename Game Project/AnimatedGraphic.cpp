@@ -1,11 +1,14 @@
 #include "AnimatedGraphic.h"
 using namespace std;
 
-AnimatedGraphic::AnimatedGraphic(const LoaderParams* pParams, int animSpeed) : SDLGameObject(pParams), m_animSpeed(animSpeed)
+AnimatedGraphic::AnimatedGraphic()
 {
 	
 }
-
+void AnimatedGraphic::load(const LoaderParams* pParams, int animSpeed)
+{
+	SDLGameObject::load(pParams);
+}
 void AnimatedGraphic::draw()
 {
 	SDLGameObject::draw();

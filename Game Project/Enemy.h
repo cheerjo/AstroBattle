@@ -1,15 +1,26 @@
 #pragma once
 #include "SDLGameObject.h"
+#include "GameObjectFactory.h"
 
 class Enemy :
 	public SDLGameObject
 {
 public:
-	Enemy(const LoaderParams* pParams);
+	Enemy();
+
+	virtual void load(const LoaderParams* pParams);
 
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
 
 private:
+};
+
+class EnemyCreator : public BaseCreator
+{
+	GameObject* createGameObject() const
+	{
+		return new Enemy();
+	}
 };

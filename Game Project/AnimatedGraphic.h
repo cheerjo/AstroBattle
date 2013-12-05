@@ -1,12 +1,13 @@
 #pragma once
 #include "SDLGameObject.h"
+#include "GameObjectFactory.h"
 
 class AnimatedGraphic :
 	public SDLGameObject
 {
 public:
-	AnimatedGraphic(const LoaderParams* pParams, int animSpeed);
-
+	AnimatedGraphic();
+	virtual void load(const LoaderParams* pParams, int animSpeed);
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
@@ -14,4 +15,12 @@ public:
 private:
 	int m_numFrames = 3;
 	int m_animSpeed;
+};
+
+class AnimatedGraphicCreator : public BaseCreator
+{
+	GameObject* createGameObject() const
+	{
+		return new AnimatedGraphic();
+	}
 };

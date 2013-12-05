@@ -1,8 +1,9 @@
 #include "Game.h"
 #include <SDL_image.h>
 #include <iostream>
-#include "MenuState.h"
+#include "MainMenuState.h"
 #include "PlayState.h"
+#include "MenuButton.h"
 
 Game* Game::s_pInstance = 0;
 
@@ -51,7 +52,10 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	m_bRunning = true;
 	
 	m_pGameStateMachine = new GameStateMachine();
-	m_pGameStateMachine->changeState(new MenuState());
+	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
+	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+	m_pGameStateMachine->changeState(new MainMenuState());
 	
 	return true;
 }

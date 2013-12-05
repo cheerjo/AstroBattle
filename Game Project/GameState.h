@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "Game.h"
-
+#include "StateParser.h"
 class GameState
 {
 public:
@@ -14,5 +14,6 @@ public:
 	virtual bool onExit() = 0;
 
 	virtual std::string getStateID() const = 0;
+	std::vector<std::string> m_textureIDList;
 };
 
