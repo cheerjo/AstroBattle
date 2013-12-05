@@ -1,15 +1,17 @@
 #pragma once
 #include "SDLGameObject.h"
 
-class Enemy :
+class AnimatedGraphic :
 	public SDLGameObject
 {
 public:
-	Enemy(const LoaderParams* pParams);
+	AnimatedGraphic(const LoaderParams* pParams, int animSpeed);
 
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
 
 private:
+	int m_numFrames = 3;
+	int m_animSpeed;
 };
