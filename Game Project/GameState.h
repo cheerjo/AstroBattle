@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 #include "Game.h"
-#include "StateParser.h"
 class GameState
 {
 public:

@@ -51,6 +51,8 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	}
 	std::cout << "init success\n";
 	m_bRunning = true;
+	m_gameWidth = width;
+	m_gameHeight = height;
 	
 	m_pGameStateMachine = new GameStateMachine();
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());

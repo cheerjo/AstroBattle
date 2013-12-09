@@ -41,7 +41,14 @@ public:
 	bool running(){
 		return m_bRunning;
 	}
-
+	int getGameWidth() const
+	{
+		return m_gameWidth;
+	}
+	int getGameHeight() const
+	{
+		return m_gameHeight;
+	}
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 	GameStateMachine* getStateMachine(){ return m_pGameStateMachine; }
 
@@ -53,6 +60,8 @@ private:
 
 	bool m_bRunning;
 	int m_currentFrame;
+	int m_gameWidth;
+	int m_gameHeight;
 
 	GameStateMachine* m_pGameStateMachine;
 };

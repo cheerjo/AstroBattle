@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff">
+ <properties>
+  <property name="helicopter" value="assets/helicopter.png"/>
+  <property name="helicopter2" value="assets/helicopter2.png"/>
+ </properties>
+ <tileset firstgid="1" name="Blocks" tilewidth="32" tileheight="32" spacing="2" margin="2">
+  <image source="blocks1.png" width="614" height="376"/>
+ </tileset>
+ <tileset firstgid="199" name="Blocks2" tilewidth="32" tileheight="32" spacing="2" margin="2">
+  <image source="blocks2.png" width="614" height="376"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztlE1uwjAQRh2VK5RF78E5smjXbfk7SnukUgot52AFLGAFC9oL9Itkq4M1zkzSINmQJz1hmGiQ57NjDM8jfILPgXpLfPThQHgmlOsKruFG+V/XdD6kvQ7hCI7N6RylmZbVj/Ab/hhdrhpCfS4ly36G/WWnv9E50nWBv2+/TnMt6Hi9HXXPx6Wys58vmNcrvPPm5uZ4k4VnqqnTWt07Ip2J1HmDE+s7WU/h1j7TtXO8zf7WHK7u5+koy4qyE+raPikyhx/EPVzY9YRxGuhTJdcy/ttHyjJ2aB5fcGZ1311tYX//VPQpXJp6ufp9ZhX6cFmmRt7QM1VyPRhdrlXPB5dlCtzjvj/YO58TfXJGrkcscFmmTGj2fr3lfNB3btm7WcpKS5P3qtdMmySRstDmWtAjnqvPNRD7vrksW2SayjX286HhF6rLphs=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="100" height="15">
+  <object name="helicopter" type="Player" x="392" y="141" width="117" height="103">
+   <properties>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="55"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="128"/>
+   </properties>
+  </object>
+  <object name="helicopter2" type="Enemy" x="224" y="213" width="117" height="103">
+   <properties>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="55"/>
+    <property name="textureID" value="helicopter2"/>
+    <property name="textureWidth" value="128"/>
+   </properties>
+  </object>
+  <object name="helicopter2" type="Enemy" x="248" y="41" width="117" height="103">
+   <properties>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="55"/>
+    <property name="textureID" value="helicopter2"/>
+    <property name="textureWidth" value="128"/>
+   </properties>
+  </object>
+  <object name="helicopter2" type="Enemy" x="987" y="177" width="117" height="103">
+   <properties>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="55"/>
+    <property name="textureID" value="helicopter2"/>
+    <property name="textureWidth" value="128"/>
+   </properties>
+  </object>
+  <object name="helicopter2" type="Enemy" x="1544" y="94" width="117" height="103">
+   <properties>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="55"/>
+    <property name="textureID" value="helicopter2"/>
+    <property name="textureWidth" value="128"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="CollideLayer" width="100" height="15" opacity="0.4">
+  <data encoding="base64" compression="zlib">
+   eJzt1EkKwCAQRFGP4f1P6sKNiN2W9sKB/yBIiAZSFU2pys2Ym3uLNWe2Dhor276fSFdY42XYd6PkTScxo8y9S3kf4pTcvecnzqtfz8idb1rdN9CR6Z345+9GPwAAAHhRAX93BdE=
+  </data>
+ </layer>
+</map>
