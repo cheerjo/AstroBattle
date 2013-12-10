@@ -11,6 +11,8 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
+	Vector2D getVelocity() { return m_velocity; }
+	virtual void collision(){ std::cout << "collision!"; }
 
 private:
 	void handleInput();
