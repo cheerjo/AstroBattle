@@ -31,6 +31,8 @@ protected:
 	int m_currentFrame;
 
 	int m_numFrames;
+	bool goingRight;
+	bool goingLeft;
 
 	std::string m_textureID;
 };

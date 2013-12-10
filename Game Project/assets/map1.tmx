@@ -10,13 +10,23 @@
  <tileset firstgid="199" name="Blocks2" tilewidth="32" tileheight="32" spacing="2" margin="2">
   <image source="blocks2.png" width="614" height="376"/>
  </tileset>
- <layer name="Tile Layer 1" width="100" height="15">
+ <layer name="Background" width="100" height="15">
   <data encoding="base64" compression="zlib">
-   eJztlMsNwjAQRB1BC3Cgj1QCZ/6UAiUB4VsHJ+AAJzgADTCRbLGx7NgJFuT3pBEmGw14Z23G1HShHtTX1CuyxwAaGt7R5XqETtDZ8rfKNB+mvY6gMTRh0T6aehpXf0BP6MXscrVB51OULAce9udFn9E+0nWIvG+5TnMNqUvegrTzUVSu/HOKfs2gltQ30ceap++pTZ3W0p4R00zknTm04FqSdQBd+DtN3seG91mrEHU5T0FcVpSroW7rk0c20IroBu35eqFQoPFJkmsc3/qYssw6NI8dtOYS30Vtz59vLXxCHVi6XGWfdQIfVZZlJUmud2aXa9L5UGWZB9o4750v72AXHq5RZVlk/H//gRJA71zTHe8TpcXluarmQ4+rXH89H3km6/tWZVlhxlWuWZ8PG97VXZ/W
+   eJzll0sOgzAMRMOhOAldQ0vL/a+AFywi1CRuPLHj9EleICKEZ/yBEL6zUmwUz8R97yxTCI+Jf96DHi+KvXAGlYcHPWp5U3wojuu6lOv9PBqOr5LnaHiZ06i1filQvlrUB6omRgGlh9Zc05yfOW281NGv+/qOtAdH3ndoNLTy5IeXHish6SFPfsVwvEP4K51vSErvwsm3p3xy1HqHqueW375zg2ei0ZwL1jNojqKW3vqqx92G7ClOflJfLTS0+udOoaGBdf//Kx72kBYngtQyvQ==
   </data>
  </layer>
- <objectgroup name="Object Layer 1" width="100" height="15">
-  <object name="helicopter" type="Player" x="392" y="141" width="117" height="103">
+ <layer name="ForegroundBehind" width="100" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztlkkOwjAMRdM1cARgzShYM14AJLgASHAFjgwcocCKv+iiClFmkwj8JC9a19Z3Uv1ECIahY1gIMUKMi9RK4tDAHE1ESzGPLpcLS2hbIdYZa3ShjTk6iK5iHl0uJ3bQt89cowsTzDJFlNXzTZFLhY0fnZA7O2rs4fs+YuAxm662/Hz1U9j40cWwpqo1mqFmjlh47EdILTXfOGNkP3pE6LlBv62n5pBaaijOGHmPffzIxAH9jlXPl5QzeVm91pUQn7Ql9hkj77HJj2Kj86O7R796Tc5epyPlPYLKj56EvV1w+aeuZCrsCfGjlL0ZhmGY/+ENDGgeoQ==
+  </data>
+ </layer>
+ <layer name="Ground" width="100" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztlgEOgjAMRXv/A0kEhXNwBtQzMBIaf0o3hls1al/SDJB1XX87JHIcx3Ec55c4BWsy7fyhGGvTGPsu8X8J1oG1ifFaFKkNWt3s/W6lx+KXc/UqPF/LP1/jfclaNeG9y5gly7NhHUd67qGmJqwxxvMvYI1r9SKRtcbWU3nPSB361TrlPUtyvzcW62k9gbpIWmGD8oz95MYcqwf0jXQHfB8F48A9TcEeq3GMJbqk+oDHO23zGgPnjnA9gO+9vMVqQvrQ9MB+rI3UYrmfaKsJntW5seCeef6Ntlpo37WUHiTew5HPGOwTzVL/edCPti7rhv4t0PIizxBZf6l4YvnWfH0LWk6sdTnK3nmNujjOO5kBjLfaGQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="100" height="15">
+  <object name="helicopter" type="Player" x="428" y="254" width="46" height="34">
    <properties>
     <property name="numFrames" value="5"/>
     <property name="textureHeight" value="55"/>
@@ -57,4 +67,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="ForegroundInfront" width="100" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzt0bkRgDAMBEC5HKAEoASeDqAZqBuRmxQnuzOXKNLcRQAAfOtKRJ8ZSutPeI25w5SZ7fGrLfveK50veVtt8bsrO78rvR95O+0BAEBDD+BfBEU=
+  </data>
+ </layer>
 </map>

@@ -8,7 +8,7 @@ m_position(0, 0),
 m_velocity(0,0)
 {
 	m_numColumns = (TheGame::Instance()->getGameWidth() / m_tileSize);
-	m_numRows = (TheGame::Instance()->getGameHeight() / m_tileSize);
+	m_numRows = (1+(TheGame::Instance()->getGameHeight() / m_tileSize));
 }
 
 Tileset TileLayer::getTilesetByID(int tileID)
