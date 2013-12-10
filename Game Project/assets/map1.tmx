@@ -21,8 +21,16 @@
   </data>
  </layer>
  <layer name="Ground" width="100" height="15">
+  <properties>
+   <property name="collidable" value=""/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztlgEOgjAMRXv/A0kEhXNwBtQzMBIaf0o3hls1al/SDJB1XX87JHIcx3Ec55c4BWsy7fyhGGvTGPsu8X8J1oG1ifFaFKkNWt3s/W6lx+KXc/UqPF/LP1/jfclaNeG9y5gly7NhHUd67qGmJqwxxvMvYI1r9SKRtcbWU3nPSB361TrlPUtyvzcW62k9gbpIWmGD8oz95MYcqwf0jXQHfB8F48A9TcEeq3GMJbqk+oDHO23zGgPnjnA9gO+9vMVqQvrQ9MB+rI3UYrmfaKsJntW5seCeef6Ntlpo37WUHiTew5HPGOwTzVL/edCPti7rhv4t0PIizxBZf6l4YvnWfH0LWk6sdTnK3nmNujjOO5kBjLfaGQ==
+  </data>
+ </layer>
+ <layer name="ForegroundInfront" width="100" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzt0bkRgDAMBEC5HKAEoASeDqAZqBuRmxQnuzOXKNLcRQAAfOtKRJ8ZSutPeI25w5SZ7fGrLfveK50veVtt8bsrO78rvR95O+0BAEBDD+BfBEU=
   </data>
  </layer>
  <objectgroup name="Objects" width="100" height="15">
@@ -67,9 +75,4 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="ForegroundInfront" width="100" height="15">
-  <data encoding="base64" compression="zlib">
-   eJzt0bkRgDAMBEC5HKAEoASeDqAZqBuRmxQnuzOXKNLcRQAAfOtKRJ8ZSutPeI25w5SZ7fGrLfveK50veVtt8bsrO78rvR95O+0BAEBDD+BfBEU=
-  </data>
- </layer>
 </map>
