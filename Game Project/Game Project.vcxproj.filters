@@ -223,4 +223,9 @@
       <Filter>Resource Files</Filter>
     </Xml>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\map1.tmx">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
