@@ -33,6 +33,7 @@ protected:
 	int m_numFrames;
 	bool goingRight;
 	bool goingLeft;
+	bool isStationary;
 
 	std::string m_textureID;
 };
