@@ -36,7 +36,7 @@ Tileset TileLayer::getTilesetByID(int tileID)
 void TileLayer::update()
 {
 	m_position += m_velocity;
-	m_velocity.setX(2);
+	m_velocity.setX(0);
 	if (m_position.getX() >= 2560)
 	{
 		m_position.setX(0);

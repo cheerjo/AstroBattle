@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="100" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff">
  <properties>
-  <property name="helicopter" value="assets/helicopter.png"/>
   <property name="helicopter2" value="assets/helicopter2.png"/>
+  <property name="player" value="assets/player.png"/>
  </properties>
  <tileset firstgid="1" name="Blocks" tilewidth="32" tileheight="32" spacing="2" margin="2">
   <image source="blocks1.png" width="614" height="376"/>
@@ -15,64 +15,32 @@
    eJztl00SgCAIRvVQnaTW/Xf/K8TSaVIxCNB6M6y0gg+EdO6eEWwCmyPrtdN75waP31+qh4Z+C9ia2cPlV4v1EdMvF+sGtoMd77iFyivlPW/nUlu/GFx+acTHVRMURuXvh3Dp8aW+lluzROm8vkI5gy3oJ0mLZ4jCXyP1gskdR36p/Y2TnC+YeC3Fk+Jp7lI9zop+He1xESzPCm79usCeYu1cSc42rH6c9y1MfNS8Wvs/0LiPS2hguddQsVZDITXMISlO6OkxCQ==
   </data>
  </layer>
- <layer name="ForegroundBehind" width="100" height="15">
-  <data encoding="base64" compression="zlib">
-   eJztlU0KwjAQhdO19gjqWquia38voKAXUNAreGT1CBVXvkILJYQm1YkTwnzwFu1MhpkJvCglCP4YJ0pNoGnC3QkNHczRhVLDPE2xUFijtw20ZeqRen895PahgeFMUywkDujvyNSjj/3NkD+H8vL7YYhx4eJHF8SuLXscIn8EZQSzhbw/alz86GaZNzf8W+DMElpFtKuCf7wxuh+9CGruUG8f2V0U+Hhj9Dv+xo9snFDvXNZ8azFKL+OA2iP1O7b5ETWxetkvcL6DsXpZxbNF7t1bF+7UvUwQBEEQQuQDc/kZYg==
-  </data>
- </layer>
  <layer name="Ground" width="100" height="15">
   <properties>
    <property name="collidable" value=""/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztlQ0OwiAMhXv/A7mIOs6xM0w9gyxZY1PKj6GgLv2Shm2Ojr5HEcAwDMMwjCNxCjFVxvlLa9RmUsylrd81xIWEy4w3xTq0kOou/a7ph7Z++K40H6/pvdMrpYlNU0kDzvbM7+MC7xq0PPlX/bSge1yql8O1wpihX8+Mpva87PE9qSeoLxzHwgvPMM8oTzR1ovuS1rSGeO6B2rR8L9cHOD4g1jUFnbuQa09y45pLa2pB0q8V7sV2v0LsCT2ra2uhfYDz7xB7IZ3LOT8A4n7AcWb5Uv2e6sFP6fl/IunCzxC+/3LepPSWch2BX6mjdF5TXwxjJC+KKdCG
+   eJztw0EJAAAIBLDrX8h6fi+CwgZLAAAAAGjjqQBfLKtxR30=
+  </data>
+ </layer>
+ <layer name="ForegroundBehind" width="100" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztj00KwyAQhXWTXqE9Re5/naRoss9f201HHCGIBmRAF3kfPCbIfLyJUgAAAAAAANyXgTJS3pU8qduqv5azUFbKVuBIPKnbqr+W43joQkHoSd1W/bWcV8b5UL6cH8XwfGqf4M0ct99pvx92HDsn1dnTnGha/u4Tt7g3yzvqNHN3h94jep8S/QFzsZtzzrfE3bET/z8AAABQwh8aBD6Q
   </data>
  </layer>
  <objectgroup name="Objects" width="100" height="15">
-  <object name="helicopter" type="Player" x="428" y="254" width="46" height="34">
+  <object name="helicopter" type="Player" x="327" y="305" width="46" height="34">
    <properties>
-    <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="55"/>
-    <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="128"/>
-   </properties>
-  </object>
-  <object name="helicopter2" type="Enemy" x="224" y="213" width="117" height="103">
-   <properties>
-    <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="55"/>
-    <property name="textureID" value="helicopter2"/>
-    <property name="textureWidth" value="128"/>
-   </properties>
-  </object>
-  <object name="helicopter2" type="Enemy" x="248" y="41" width="117" height="103">
-   <properties>
-    <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="55"/>
-    <property name="textureID" value="helicopter2"/>
-    <property name="textureWidth" value="128"/>
-   </properties>
-  </object>
-  <object name="helicopter2" type="Enemy" x="987" y="177" width="117" height="103">
-   <properties>
-    <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="55"/>
-    <property name="textureID" value="helicopter2"/>
-    <property name="textureWidth" value="128"/>
-   </properties>
-  </object>
-  <object name="helicopter2" type="Enemy" x="1544" y="94" width="117" height="103">
-   <properties>
-    <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="55"/>
-    <property name="textureID" value="helicopter2"/>
-    <property name="textureWidth" value="128"/>
+    <property name="numFrames" value="2"/>
+    <property name="textureHeight" value="46"/>
+    <property name="textureID" value="player"/>
+    <property name="textureWidth" value="58"/>
    </properties>
   </object>
  </objectgroup>
  <layer name="ForegroundInfront" width="100" height="15">
   <data encoding="base64" compression="zlib">
-   eJzt0bENgDAMRFFnHMgIwAiQbECWgbk5+liRiBSa/yQ3LizrzgwAAMA3BbNZE8Pfn+C1qIdVs9HHUEl550rmu3YHXTR5+X116dZduXdqV+ijycsPAAAA/R6s8gXz
+   eJzt0dEJgEAMRMEc2oL235lagmcDBg9rCOIMvP+FjQAAgH/Ysj07incwnFnPruohPKYWMbfqFbyW/GL1BwB8zg1JYwWt
   </data>
  </layer>
 </map>

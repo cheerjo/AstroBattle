@@ -30,10 +30,13 @@ protected:
 	int m_currentRow;
 	int m_currentFrame;
 
+	int m_numFramesOrig;
 	int m_numFrames;
 	bool goingRight;
 	bool goingLeft;
 	bool isStationary;
+	bool wasRight = false;
+	bool wasLeft = true;
 
 	std::string m_textureID;
 };

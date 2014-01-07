@@ -17,6 +17,11 @@ public:
 private:
 	void handleInput();
 	Vector2D target;
+	virtual void move(int dir);
+	bool standing = true;
+	bool jumping = false;
+	bool falling = false;
+	int jStart = -5;
 };
 
 class PlayerCreator : public BaseCreator

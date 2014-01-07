@@ -32,6 +32,7 @@ bool PlayState::onEnter()
 	LevelParser levelParser;
 	pLevel = levelParser.parseLevel("assets/map1.tmx");
 	std::cout << "entering PlayState\n";
+	SDL_ShowCursor(1);
 	return true;
 }
 
@@ -39,6 +40,7 @@ bool PlayState::onExit()
 {
 	
 	std::cout << "Exiting PlayState\n";
+	SDL_ShowCursor(1);
 	return GameState::onExit();
 }
 

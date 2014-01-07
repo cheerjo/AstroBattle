@@ -26,6 +26,7 @@ void MainMenuState::render()
 
 bool MainMenuState::onEnter()
 {
+	SDL_ShowCursor(1);
 	//parse the state
 	StateParser stateParser;
 	stateParser.parseState("test.xml", s_menuID, &m_gameObjects, &m_textureIDList);

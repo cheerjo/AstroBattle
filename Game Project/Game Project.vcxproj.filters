@@ -226,6 +226,12 @@
     <Image Include="assets\resume.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\newcreate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\characters.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="test.xml">

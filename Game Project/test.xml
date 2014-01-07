@@ -2,11 +2,13 @@
 <States>
     <MENU>
         <TEXTURES>
+            <texture filename="assets/title.png" ID ="titleimg"/>
             <texture filename="assets/button.png" ID="playbutton"/>
             <texture filename="assets/exit.png" ID="exitbutton"/>
         </TEXTURES>
         
         <OBJECTS>
+            <object type="AnimatedGraphic" x="100" y="50" width="425" height="73" textureID="titleimg" numFrames="2" animSpeed="2"/>
             <object type="MenuButton" x="100" y="100" width="400" height="100" textureID="playbutton" numFrames="0" callbackID="1"/>
             <object type="MenuButton" x="100" y="300" width="400" height="100" textureID="exitbutton" numFrames="0" callbackID="2"/>
         </OBJECTS>

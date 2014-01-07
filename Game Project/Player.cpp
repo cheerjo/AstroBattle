@@ -18,16 +18,34 @@ void Player::draw()
 
 void Player::update()
 {
+	if (jStart > -5)
+	{
+		if (Player::getPosition().getY() < (jStart - 40)){
+			jumping = false;
+			falling = true;
+			jStart = -5;
+		}
+	}
+	if (!jumping) m_velocity.setY(2);
 	m_velocity.setX(0);
-	m_velocity.setY(0);
+	
 
 	handleInput();
+	if (standing)
+	{
+		m_currentFrame = 1;
+	}
+	else
+	{
+		m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
 
-	m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
-
+	}
+	
 	SDLGameObject::update();
 	bool left = false;
 	bool right = false;
+	bool top = false;
+	bool bottom = false;
 	if (Player::getPosition().getX() + Player::getWidth() > 640)
 	{
 		right = true;
@@ -37,16 +55,38 @@ void Player::update()
 	{
 		left = true;
 	}
-	if (left || right)
+	if (Player::getPosition().getY() + Player::getHeight() >480)
 	{
-		cout << "Player reached x edge";
+		bottom = true;
+		falling = false;
+	}
+	if (Player::getPosition().getY() < 0)
+	{
+		top = true;
+	}
+	
+	if (left || right || top || bottom)
+	{
+		cout << "Player reached ";
 		if (left)
 		{
+			cout << "left" << endl;
 			Player::m_position.setX(0);
 		}
 		if (right)
 		{
+			cout << "right" << endl;
 			Player::m_position.setX(640-Player::getWidth());
+		}
+		if (bottom)
+		{
+			cout << "bottom" << endl;
+			Player::m_position.setY(480-Player::getHeight());
+		}
+		if (top)
+		{
+			cout << "top" << endl;
+			Player::m_position.setY(0);
 		}
 	}
 }
@@ -55,20 +95,43 @@ void Player::clean()
 }
 void Player::handleInput()
 {	
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT) || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	{
+		standing = false;
+	}
+	else
+	{
+		standing = true;
+	}
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
 	{
-		m_velocity.setX(2);
+		move(1);
 	}
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
 	{
-		m_velocity.setX(-4);
+		move(-1);
 	}
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
 	{
-		m_velocity.setY(-2);
+		move(0);
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
-	{
-		m_velocity.setY(2);
+	//if (TheInputHandler::Instance()->getMouseButtonState(LEFT))
+}
+
+void Player::move(int dir)
+{
+	switch (dir){
+	case 1:
+		m_velocity.setX(2);
+		break;
+	case -1:
+		m_velocity.setX(-2);
+		break;
+	case 0:
+		if (jumping || falling) break;
+		jumping = true;
+		jStart = Player::getPosition().getY();
+		m_velocity.setY(-4);
+		break;
 	}
 }

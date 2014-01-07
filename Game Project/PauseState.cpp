@@ -33,6 +33,7 @@ void PauseState::render()
 
 bool PauseState::onEnter()
 {
+	SDL_ShowCursor(1);
 	StateParser stateParser;
 	stateParser.parseState("test.xml", s_pauseID, &m_gameObjects, &m_textureIDList);
 	m_callbacks.push_back(0);
@@ -47,6 +48,7 @@ bool PauseState::onEnter()
 bool PauseState::onExit()
 {
 	TheInputHandler::Instance()->reset();
+	SDL_ShowCursor(0);
 
 	std::cout << "exiting PauseState\n";
 
