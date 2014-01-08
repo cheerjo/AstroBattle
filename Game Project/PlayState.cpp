@@ -18,13 +18,26 @@ void PlayState::update()
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new PauseState());
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_1))
 	{
-		GameObject* pGameObject = TheGameObjectFactory::Instance()->create("Bullet");
-		pGameObject->load(new LoaderParams(100, 100, 27, 14, "bullet", 1));
-		m_gameObjects.push_back(pGameObject);
+		LevelParser levelParser;
+		pLevel = levelParser.parseLevel("assets/map1.tmx");
+	}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_2))
+	{
+		LevelParser levelParser;
+		pLevel = levelParser.parseLevel("assets/map2.tmx");
 	}
 	pLevel->update();
+	/*for (int i = 0; i < m_gameObjects.size(); i++)
+	{
+		for (int j = 0; j < m_gameObjects.size(); j++)
+		{
+			if (checkCollision(m_gameObjects[i], m_gameObjects[j] * ))std::cout << "collision!" << endl;
+			SDLGameObject asdf = m_gameObjects[i];
+		}
+	}*/
 
 }
 

@@ -2,8 +2,8 @@
 <map version="1.0" orientation="orthogonal" width="21" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff">
  <properties>
   <property name="bullet" value="assets/bullet.png"/>
+  <property name="helicopter2" value="assets/helicopter2.png"/>
   <property name="player" value="assets/player.png"/>
-  <property name="player1" value="assets/player1.png"/>
  </properties>
  <tileset firstgid="1" name="Blocks" tilewidth="32" tileheight="32" spacing="2" margin="2">
   <image source="blocks1.png" width="614" height="376"/>
@@ -29,11 +29,11 @@
  </layer>
  <layer name="ForegroundBehind" width="21" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDHZwH4gfAPFDAmKkgI9A/AmIPxMQIwUwMzIwsDASFiMEfiOxfwGxGFD/DyQxUUaI2Hcg+xkQP4Wqk2CEsEH6v0PFfkH1AAAvKxbQ
+   eJytUk0LwjAMTdGzN8X//5PmPKuwKvSmHiZzBxOasDD6sa4+eDR9S16TtQAT7ryeoR4n5QezeC3ahVqNX61nDDK/S+SkvsVAd7UzAKPSaO9gYqwfYmhWuX/xpVXiMZAfQjujRT6YcvY/QD5O9dXwGXaFl/yvRmlL510C8u2YpXd9QV6Rt4RW2usT+UK+M1oJNvhOtiav5fBV8YA8YP1HaXvjtR78G7CcdzQ+pvqetYFrfr5mQdI=
   </data>
  </layer>
  <objectgroup name="Objects" width="21" height="15">
-  <object name="Player" type="Player" x="5" y="443" width="46" height="34">
+  <object name="Player" type="Player" x="3" y="442" width="46" height="34">
    <properties>
     <property name="numFrames" value="2"/>
     <property name="textureHeight" value="46"/>
@@ -41,20 +41,12 @@
     <property name="textureWidth" value="65"/>
    </properties>
   </object>
-  <object name="Player1" type="Enemy" x="109" y="356" width="46" height="34">
+  <object name="Enemy" type="Enemy" x="100" y="329" width="60" height="32">
    <properties>
-    <property name="numFrames" value="2"/>
-    <property name="textureHeight" value="46"/>
-    <property name="textureID" value="player1"/>
-    <property name="textureWidth" value="65"/>
-   </properties>
-  </object>
-  <object name="Bullet" type="Bullet" x="39" y="448" width="150" height="85">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="27"/>
-    <property name="textureID" value="bullet"/>
-    <property name="textureWidth" value="14"/>
+    <property name="numFrames" value="5"/>
+    <property name="textureHeight" value="55"/>
+    <property name="textureID" value="enemy"/>
+    <property name="textureWidth" value="128"/>
    </properties>
   </object>
  </objectgroup>
