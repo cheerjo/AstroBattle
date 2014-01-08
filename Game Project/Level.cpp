@@ -1,6 +1,7 @@
 #include "Level.h"
 #include "TextureManager.h"7
 #include "Game.h"
+#include "BulletHandler.h"
 
 void Level::render()
 {
@@ -8,6 +9,10 @@ void Level::render()
 	for (int i = 0; i < m_layers.size(); i++)
 	{
 		m_layers[i]->render();
+	}
+	for (int j = 0; j < TheBulletHandler::Instance()->getNum(); j++)
+	{
+		TheTextureManager::Instance()->draw("bullet", TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer());
 	}
 }
 
@@ -17,4 +22,5 @@ void Level::update()
 	{
 		m_layers[i]->update();
 	}
+	TheBulletHandler::Instance()->update();
 }

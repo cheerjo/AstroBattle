@@ -14,6 +14,7 @@
     <ClCompile Include="AnimatedGraphic.cpp" />
     <ClCompile Include="base64decoder\base64.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletHandler.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -44,6 +45,7 @@
     <ClInclude Include="AnimatedGraphic.h" />
     <ClInclude Include="base64decoder\base64.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletHandler.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Enemy.h" />
@@ -93,7 +95,9 @@
     <Xml Include="test.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\map1.tmx" />
+    <None Include="assets\map1.tmx">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D24273D9-7D48-4CF6-AEC9-EA868886F2A1}</ProjectGuid>

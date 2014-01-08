@@ -49,14 +49,6 @@
     <property name="textureWidth" value="65"/>
    </properties>
   </object>
-  <object name="Bullet" type="Bullet" x="39" y="448" width="150" height="85">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="27"/>
-    <property name="textureID" value="bullet"/>
-    <property name="textureWidth" value="14"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer name="ForegroundInfront" width="21" height="15">
   <data encoding="base64" compression="zlib">

@@ -30,14 +30,6 @@ void PlayState::update()
 		pLevel = levelParser.parseLevel("assets/map2.tmx");
 	}
 	pLevel->update();
-	/*for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		for (int j = 0; j < m_gameObjects.size(); j++)
-		{
-			if (checkCollision(m_gameObjects[i], m_gameObjects[j] * ))std::cout << "collision!" << endl;
-			SDLGameObject asdf = m_gameObjects[i];
-		}
-	}*/
 
 }
 
