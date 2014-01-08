@@ -2,10 +2,10 @@
 #include "Game.h"
 
 BulletHandler* BulletHandler::s_pInstance = 0;
-void BulletHandler::add(Vector2D pos)
+void BulletHandler::add(Vector2D pos, int dir)
 {
-	std::cout << pos.m_x << "," << pos.m_y << std::endl;
 	bulletPos.push_back(pos);
+	bulletDir.push_back(dir);
 }
 
 std::vector< int > BulletHandler::get(int num)
@@ -13,6 +13,7 @@ std::vector< int > BulletHandler::get(int num)
 	std::vector<int> temp;
 	temp.push_back(bulletPos.at(num).m_x);
 	temp.push_back(bulletPos.at(num).m_y);
+	temp.push_back(bulletDir.at(num));
 	return temp;
 }
 
@@ -20,10 +21,18 @@ void BulletHandler::update()
 {
 	for (int i = 0; i < bulletPos.size(); i++)
 	{
-		bulletPos.at(i) += bulletSpeed;
+		switch (bulletDir.at(i))
+		{
+		case MRIGHT:
+			bulletPos.at(i) += bulletSpeed;
+			break;
+		case MLEFT:
+			bulletPos.at(i) -= bulletSpeed;
+		}
+		
 		if (bulletPos.at(i).m_x > TheGame::Instance()->getGameWidth())
 		{
-			//remove from array
+			//bulletPos.erase(bulletPos.begin() + i);
 		}
 	}
 }

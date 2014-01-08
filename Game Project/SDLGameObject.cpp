@@ -76,3 +76,4 @@ void SDLGameObject::clean()
 {
 
 }
+

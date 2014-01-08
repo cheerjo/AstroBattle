@@ -166,7 +166,8 @@ void Player::shoot()
 {
 	if (shooting) return;
 	shooting = true;
-	TheBulletHandler::Instance()->add(Vector2D(m_position.m_x, m_position.m_y));
+	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x+51, m_position.m_y+7), MRIGHT);
+	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x-14, m_position.m_y+7), MLEFT);
 	shootStart = SDL_GetTicks();
 	
 }

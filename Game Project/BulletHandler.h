@@ -16,7 +16,7 @@ public:
 		}
 		return s_pInstance;
 	}
-	void add(Vector2D pos);
+	void add(Vector2D pos, int dir);
 	int getNum(){ return bulletPos.size(); }
 	void update();
 	void remove(){}
@@ -24,7 +24,7 @@ public:
 
 
 private:
-	Vector2D bulletSpeed = Vector2D(2, 0);
+	Vector2D bulletSpeed = Vector2D(4, 0);
 	BulletHandler(){}
 	static BulletHandler* s_pInstance;
 	std::vector< Vector2D > bulletPos;

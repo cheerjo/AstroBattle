@@ -3,6 +3,7 @@
 #include "PlayState.h"
 #include "TileLayer.h"
 #include "GameStateMachine.h"
+#include "BulletHandler.h"
 using namespace std;
 
 Enemy::Enemy() : SDLGameObject(), target(0, 0)
@@ -165,6 +166,7 @@ void Enemy::shoot()
 {
 	if (shooting) return;
 	shooting = true;
+	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x + 51, m_position.m_y + 7), MRIGHT);
+	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x - 14, m_position.m_y + 7), MLEFT);
 	shootStart = SDL_GetTicks();
-
 }

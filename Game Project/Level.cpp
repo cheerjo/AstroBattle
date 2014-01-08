@@ -1,5 +1,5 @@
 #include "Level.h"
-#include "TextureManager.h"7
+#include "TextureManager.h"
 #include "Game.h"
 #include "BulletHandler.h"
 
@@ -12,7 +12,16 @@ void Level::render()
 	}
 	for (int j = 0; j < TheBulletHandler::Instance()->getNum(); j++)
 	{
-		TheTextureManager::Instance()->draw("bullet", TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer());
+		switch (TheBulletHandler::Instance()->get(j).at(2))
+		{
+		case MRIGHT:
+			TheTextureManager::Instance()->draw("bullet", TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer());
+			break;
+		case MLEFT:
+			TheTextureManager::Instance()->draw("bullet", TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer(),SDL_FLIP_HORIZONTAL);
+			break;
+		}
+		
 	}
 }
 
