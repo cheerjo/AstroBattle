@@ -176,6 +176,7 @@ void Player::move(int dir)
 void Player::shoot()
 {
 	if (shooting) return;
+	TheSoundManager::Instance()->playSound("laser", 0);
 	shooting = true;
 	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x+51, m_position.m_y+7), MRIGHT,PBULLET);
 	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x-14, m_position.m_y+7), MLEFT,PBULLET);

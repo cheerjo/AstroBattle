@@ -9,6 +9,7 @@
 #include "StateParser.h"
 #include "LevelParser.h"
 #include "CollisionManager.h"
+#include "SoundManager.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -48,6 +49,8 @@ bool PlayState::onEnter()
 	//parse the state
 	LevelParser levelParser;
 	pLevel = levelParser.parseLevel("assets/map1.tmx");
+	std::cout << "Loading laser sound" << std::endl;
+	TheSoundManager::Instance()->load("assets/LASER1.WAV", "laser", SOUND_SFX);
 	std::cout << "entering PlayState\n";
 	SDL_ShowCursor(1);
 	return true;

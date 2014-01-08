@@ -41,7 +41,7 @@
     <property name="textureWidth" value="65"/>
    </properties>
   </object>
-  <object name="Player1" type="Enemy" x="109" y="356" width="46" height="34">
+  <object name="Player1" type="Enemy" x="590" y="442" width="46" height="34">
    <properties>
     <property name="numFrames" value="2"/>
     <property name="textureHeight" value="46"/>
