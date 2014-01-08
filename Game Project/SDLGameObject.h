@@ -20,6 +20,8 @@ public:
 	int getHeight() { return m_height; }
 
 protected:
+	int playerScore = 0;
+	int enemyScore = 0;
 
 	Vector2D m_position;
 	Vector2D m_velocity;

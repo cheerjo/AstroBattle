@@ -62,7 +62,8 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 	m_pGameStateMachine->changeState(new MainMenuState());
 	TheTextureManager::Instance()->load("assets/back.jpg", "background", TheGame::Instance()->getRenderer());
-	
+	scores.push_back(0);
+	scores.push_back(0);
 	return true;
 }
 void Game::update()

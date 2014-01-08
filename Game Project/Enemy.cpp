@@ -87,22 +87,18 @@ void Enemy::update()
 	{
 		if (left)
 		{
-			cout << "left" << endl;
 			Enemy::m_position.setX(0);
 		}
 		if (right)
 		{
-			cout << "right" << endl;
 			Enemy::m_position.setX(640 - Enemy::getWidth());
 		}
 		if (bottom)
 		{
-			//cout << "bottom" << endl;
 			Enemy::m_position.setY(480 - Enemy::getHeight());
 		}
 		if (top)
 		{
-			cout << "top" << endl;
 			Enemy::m_position.setY(0);
 		}
 	}
@@ -112,8 +108,10 @@ void Enemy::update()
 		{
 			if (TheBulletHandler::Instance()->get(i).at(3) != EBULLET)
 			{
+				TheGame::Instance()->changeScore(1, -1);
 				TheSoundManager::Instance()->playSound("explosion", 0);
-				cout << "Enemy collided with Bullet #" << i << endl;
+				//cout << "Enemy collided with Bullet #" << i << endl;
+				std::cout << "Player: " << TheGame::Instance()->getScores().at(0) << " Enemy: " << TheGame::Instance()->getScores().at(1) << std::endl;
 				TheBulletHandler::Instance()->remove(i);
 			}
 		}

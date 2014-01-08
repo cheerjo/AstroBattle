@@ -8,7 +8,8 @@ using namespace std;
 
 Player::Player() : SDLGameObject(), target(0,0)
 {
-
+	wasRight = true;
+	wasLeft = false;
 }
 
 void Player::load(const LoaderParams* pParams)
@@ -87,22 +88,18 @@ void Player::update()
 	{
 		if (left)
 		{
-			cout << "left" << endl;
 			Player::m_position.setX(0);
 		}
 		if (right)
 		{
-			cout << "right" << endl;
 			Player::m_position.setX(640-Player::getWidth());
 		}
 		if (bottom)
 		{
-			//cout << "bottom" << endl;
 			Player::m_position.setY(480-Player::getHeight());
 		}
 		if (top)
 		{
-			cout << "top" << endl;
 			Player::m_position.setY(0);
 		}
 	}
@@ -112,8 +109,10 @@ void Player::update()
 		{
 			if (TheBulletHandler::Instance()->get(i).at(3) != PBULLET)
 			{
+				TheGame::Instance()->changeScore(-1, 1);
 				TheSoundManager::Instance()->playSound("explosion", 0);
-				cout << "Player collided with Bullet #" << i << endl;
+				//cout << "Player collided with Bullet #" << i << endl;
+				std::cout << "Player: " << TheGame::Instance()->getScores().at(0) << " Enemy: " << TheGame::Instance()->getScores().at(1) << std::endl;
 				TheBulletHandler::Instance()->remove(i);
 			}
 		}

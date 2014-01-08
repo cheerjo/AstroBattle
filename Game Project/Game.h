@@ -53,6 +53,20 @@ public:
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 	GameStateMachine* getStateMachine(){ return m_pGameStateMachine; }
 
+	void changeScore(int pChange, int eChange)
+	{
+		int pNew = scores.at(0) + pChange;
+		int eNew = scores.at(1) + eChange;
+		scores.clear();
+		scores.push_back(pNew);
+		scores.push_back(eNew);
+	}
+
+	std::vector< int > getScores()
+	{
+		return scores;
+	}
+
 private:
 	Game();
 	static Game* s_pInstance;
@@ -63,6 +77,7 @@ private:
 	int m_currentFrame;
 	int m_gameWidth;
 	int m_gameHeight;
+	std::vector< int > scores;
 
 	GameStateMachine* m_pGameStateMachine;
 };
