@@ -8,6 +8,7 @@
 #include "MenuState.h"
 #include "StateParser.h"
 #include "LevelParser.h"
+#include "CollisionManager.h"
 
 const std::string PlayState::s_playID = "PLAY";
 

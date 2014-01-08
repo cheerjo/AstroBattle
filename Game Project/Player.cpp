@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "CollisionManager.h"
 using namespace std;
 
 Player::Player() : SDLGameObject(), target(0,0)
@@ -31,15 +32,23 @@ void Player::update()
 	
 
 	handleInput();
-	if (standing)
+	if (SDL_GetTicks() - shootStart > 0 && SDL_GetTicks() - shootStart < 100 && shooting)
 	{
+		m_currentRow = 2;
+		m_currentFrame = 0;
+	}
+	else if (standing)
+	{
+		m_currentRow = 1;
 		m_currentFrame = 1;
 	}
 	else
 	{
+		m_currentRow = 1;
 		m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
 
 	}
+
 	
 	SDLGameObject::update();
 	bool left = false;
@@ -93,6 +102,12 @@ void Player::update()
 void Player::clean()
 {
 }
+
+void Player::handleAnimation()
+{
+
+}
+
 void Player::handleInput()
 {	
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT) || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
@@ -115,23 +130,32 @@ void Player::handleInput()
 	{
 		move(0);
 	}
-	//if (TheInputHandler::Instance()->getMouseButtonState(LEFT))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+	{
+		shoot();
+	}
 }
 
 void Player::move(int dir)
 {
 	switch (dir){
-	case 1:
+	case MRIGHT:
 		m_velocity.setX(2);
 		break;
-	case -1:
+	case MLEFT:
 		m_velocity.setX(-2);
 		break;
-	case 0:
+	case MJUMP:
 		if (jumping || falling) break;
 		jumping = true;
 		jStart = Player::getPosition().getY();
 		m_velocity.setY(-4);
 		break;
 	}
+}
+
+void Player::shoot()
+{
+	shooting = true;
+	shootStart = SDL_GetTicks();
 }

@@ -2,6 +2,12 @@
 #include "SDLGameObject.h"
 #include "GameObjectFactory.h"
 class TileLayer;
+enum move_dirs
+{
+	MLEFT = -1,
+	MRIGHT = 1,
+	MJUMP = 0
+};
 class Player :
 	public SDLGameObject
 {
@@ -16,11 +22,15 @@ public:
 
 private:
 	void handleInput();
+	void handleAnimation();
 	Vector2D target;
-	virtual void move(int dir);
+	void move(int dir);
+	void shoot();
 	bool standing = true;
 	bool jumping = false;
 	bool falling = false;
+	bool shooting = true;
+	Uint32 shootStart = 0;
 	int jStart = -5;
 };
 

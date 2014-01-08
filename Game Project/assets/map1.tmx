@@ -34,7 +34,7 @@
     <property name="numFrames" value="2"/>
     <property name="textureHeight" value="46"/>
     <property name="textureID" value="player"/>
-    <property name="textureWidth" value="58"/>
+    <property name="textureWidth" value="65"/>
    </properties>
   </object>
  </objectgroup>
