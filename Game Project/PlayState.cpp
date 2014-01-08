@@ -51,6 +51,8 @@ bool PlayState::onEnter()
 	pLevel = levelParser.parseLevel("assets/map1.tmx");
 	std::cout << "Loading laser sound" << std::endl;
 	TheSoundManager::Instance()->load("assets/LASER1.WAV", "laser", SOUND_SFX);
+	std::cout << "Loading explode sound" << std::endl;
+	TheSoundManager::Instance()->load("assets/bang.wav", "explosion", SOUND_SFX);
 	std::cout << "entering PlayState\n";
 	SDL_ShowCursor(1);
 	return true;

@@ -14,11 +14,6 @@
  <imagelayer name="Image Layer 1" width="21" height="15">
   <image source="back.jpg"/>
  </imagelayer>
- <layer name="Background" width="21" height="15">
-  <data encoding="base64" compression="zlib">
-   eJxjYMAO4oA4HogTcMjTCiQCcRIOOUJuSgbiFCBOpb6zCII4OtuHL5zwyY0CCAhmZGAIYcQtT0wYEjKDWGBKuRFYzYRhQmCg8g290ykAc04K5g==
-  </data>
- </layer>
  <layer name="Ground" width="21" height="15">
   <properties>
    <property name="collidable" value=""/>

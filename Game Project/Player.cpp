@@ -112,6 +112,7 @@ void Player::update()
 		{
 			if (TheBulletHandler::Instance()->get(i).at(3) != PBULLET)
 			{
+				TheSoundManager::Instance()->playSound("explosion", 0);
 				cout << "Player collided with Bullet #" << i << endl;
 				TheBulletHandler::Instance()->remove(i);
 			}

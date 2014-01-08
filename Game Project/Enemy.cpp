@@ -112,6 +112,7 @@ void Enemy::update()
 		{
 			if (TheBulletHandler::Instance()->get(i).at(3) != EBULLET)
 			{
+				TheSoundManager::Instance()->playSound("explosion", 0);
 				cout << "Enemy collided with Bullet #" << i << endl;
 				TheBulletHandler::Instance()->remove(i);
 			}
@@ -176,7 +177,7 @@ void Enemy::move(int dir)
 void Enemy::shoot()
 {
 	if (shooting) return;
-	TheSoundManager::Instance()->playSound("laser", 1);
+	TheSoundManager::Instance()->playSound("laser", 0);
 	shooting = true;
 	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x + 51, m_position.m_y + 7), MRIGHT,EBULLET);
 	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x - 14, m_position.m_y + 7), MLEFT,EBULLET);

@@ -2,6 +2,7 @@
 <map version="1.0" orientation="orthogonal" width="21" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff">
  <properties>
   <property name="bullet" value="assets/bullet.png"/>
+  <property name="pbullet" value="assets/pbullet.png"/>
   <property name="player" value="assets/player.png"/>
   <property name="player1" value="assets/player1.png"/>
  </properties>
@@ -14,11 +15,6 @@
  <imagelayer name="Image Layer 1" width="21" height="15">
   <image source="back.jpg"/>
  </imagelayer>
- <layer name="Background" width="21" height="15">
-  <data encoding="base64" compression="zlib">
-   eJxjYMAO4oA4HogTcMjTCiQCcRIOOUJuSgbiFCBOpb6zCII4OtuHL5zwyY0CCAhmZGAIYcQtT0wYEjKDWGBKuRFYzYRhQmCg8g290ykAc04K5g==
-  </data>
- </layer>
  <layer name="Ground" width="21" height="15">
   <properties>
    <property name="collidable" value=""/>

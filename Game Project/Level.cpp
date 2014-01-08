@@ -12,13 +12,14 @@ void Level::render()
 	}
 	for (int j = 0; j < TheBulletHandler::Instance()->getNum(); j++)
 	{
+		std::string temp = TheBulletHandler::Instance()->get(j).at(3) == PBULLET?"pbullet":"bullet";
 		switch (TheBulletHandler::Instance()->get(j).at(2))
 		{
 		case MRIGHT:
-			TheTextureManager::Instance()->draw("bullet", TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer());
+			TheTextureManager::Instance()->draw(temp, TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer());
 			break;
 		case MLEFT:
-			TheTextureManager::Instance()->draw("bullet", TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer(),SDL_FLIP_HORIZONTAL);
+			TheTextureManager::Instance()->draw(temp, TheBulletHandler::Instance()->get(j).at(0), TheBulletHandler::Instance()->get(j).at(1), 27, 14, TheGame::Instance()->getRenderer(),SDL_FLIP_HORIZONTAL);
 			break;
 		}
 		
