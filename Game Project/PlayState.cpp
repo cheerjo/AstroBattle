@@ -18,6 +18,12 @@ void PlayState::update()
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new PauseState());
 	}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
+	{
+		GameObject* pGameObject = TheGameObjectFactory::Instance()->create("Bullet");
+		pGameObject->load(new LoaderParams(100, 100, 27, 14, "bullet", 1));
+		m_gameObjects.push_back(pGameObject);
+	}
 	pLevel->update();
 
 }
@@ -25,6 +31,11 @@ void PlayState::update()
 void PlayState::render()
 {
 	pLevel->render();
+}
+
+void PlayState::addOb(GameObject* newObj)
+{
+	
 }
 
 bool PlayState::onEnter()

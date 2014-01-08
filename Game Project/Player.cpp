@@ -1,5 +1,8 @@
 #include "Player.h"
 #include "CollisionManager.h"
+#include "PlayState.h"
+#include "TileLayer.h"
+#include "GameStateMachine.h"
 using namespace std;
 
 Player::Player() : SDLGameObject(), target(0,0)
@@ -36,6 +39,11 @@ void Player::update()
 	{
 		m_currentRow = 2;
 		m_currentFrame = 0;
+	}
+	else if (SDL_GetTicks() - shootStart > 100 && shooting)
+	{
+		shootStart = 0;
+		shooting = false;
 	}
 	else if (standing)
 	{
@@ -76,7 +84,6 @@ void Player::update()
 	
 	if (left || right || top || bottom)
 	{
-		cout << "Player reached ";
 		if (left)
 		{
 			cout << "left" << endl;
@@ -89,7 +96,7 @@ void Player::update()
 		}
 		if (bottom)
 		{
-			cout << "bottom" << endl;
+			//cout << "bottom" << endl;
 			Player::m_position.setY(480-Player::getHeight());
 		}
 		if (top)
@@ -110,7 +117,7 @@ void Player::handleAnimation()
 
 void Player::handleInput()
 {	
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT) || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A) || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
 	{
 		standing = false;
 	}
@@ -118,17 +125,17 @@ void Player::handleInput()
 	{
 		standing = true;
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
 	{
-		move(1);
+		move(MRIGHT);
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
 	{
-		move(-1);
+		move(MLEFT);
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
 	{
-		move(0);
+		move(MJUMP);
 	}
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
 	{
@@ -156,6 +163,8 @@ void Player::move(int dir)
 
 void Player::shoot()
 {
+	if (shooting) return;
 	shooting = true;
 	shootStart = SDL_GetTicks();
+	
 }

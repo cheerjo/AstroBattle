@@ -4,6 +4,7 @@
 #include "TextureManager.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Bullet.h"
 #include <vector>
 #include "GameStateMachine.h"
 class GameStateMachine;

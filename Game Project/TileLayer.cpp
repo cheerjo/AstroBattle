@@ -42,6 +42,10 @@ void TileLayer::update()
 		m_position.setX(0);
 	}
 }
+void TileLayer::scroll()
+{
+	
+}
 
 void TileLayer::render()
 {

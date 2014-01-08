@@ -5,6 +5,7 @@
 class GameState;
 class GameStateMachine
 {
+	friend class Player;
 public:
 	void pushState(GameState* pState);
 	void changeState(GameState* pState);
@@ -12,7 +13,7 @@ public:
 	void update();
 	void render();
 
-private:
+protected:
 	
 	std::vector<GameState*> m_gameStates;
 

@@ -8,6 +8,7 @@ class PauseState :
 public:
 	virtual void update();
 	virtual void render();
+	void addOb(GameObject* newObj){}
 
 	virtual bool onEnter();
 	virtual bool onExit();

@@ -58,14 +58,17 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
 	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+	TheGameObjectFactory::Instance()->registerType("Bullet", new BulletCreator());
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 	m_pGameStateMachine->changeState(new MainMenuState());
+	TheTextureManager::Instance()->load("assets/back.jpg", "background", TheGame::Instance()->getRenderer());
 	
 	return true;
 }
 void Game::update()
 {
 	m_pGameStateMachine->update();
+	
 }
 void Game::render()
 {
@@ -74,7 +77,6 @@ void Game::render()
 	SDL_RenderClear(m_pRenderer);
 
 	m_pGameStateMachine->render();
-
 	//show window
 	SDL_RenderPresent(m_pRenderer);
 }
