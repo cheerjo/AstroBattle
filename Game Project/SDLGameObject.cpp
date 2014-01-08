@@ -1,9 +1,6 @@
 #include "SDLGameObject.h"
 #include "TextureManager.h"
 #include "Game.h"
-#include "LevelParser.h"
-#include "Level.h"
-#include "TileLayer.h"
 
 SDLGameObject::SDLGameObject() : GameObject()
 {
@@ -72,8 +69,8 @@ void SDLGameObject::draw()
 
 void SDLGameObject::update()
 {
-	//m_velocity += m_acceleration;
-	//m_position += m_velocity;
+	m_velocity += m_acceleration;
+	m_position += m_velocity;
 }
 void SDLGameObject::clean()
 {

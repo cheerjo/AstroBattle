@@ -29,7 +29,7 @@ private:
 	bool standing = true;
 	bool jumping = false;
 	bool falling = false;
-	bool shooting = false;
+	bool shooting = true;
 	Uint32 shootStart = 0;
 	int jStart = -5;
 };

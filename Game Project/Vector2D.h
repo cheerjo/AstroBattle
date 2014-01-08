@@ -77,6 +77,7 @@ public:
 
 	float length() { return sqrt(m_x * m_x + m_y * m_y); }
 
+private:
 	float m_x, m_y;
 };
 

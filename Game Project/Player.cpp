@@ -32,7 +32,23 @@ void Player::update()
 	
 
 	handleInput();
-	handleAnimation();
+	if (SDL_GetTicks() - shootStart > 0 && SDL_GetTicks() - shootStart < 100 && shooting)
+	{
+		m_currentRow = 2;
+		m_currentFrame = 0;
+	}
+	else if (standing)
+	{
+		m_currentRow = 1;
+		m_currentFrame = 1;
+	}
+	else
+	{
+		m_currentRow = 1;
+		m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
+
+	}
+
 	
 	SDLGameObject::update();
 	bool left = false;
@@ -89,27 +105,12 @@ void Player::clean()
 
 void Player::handleAnimation()
 {
-	if (SDL_GetTicks() - shootStart > 0 && SDL_GetTicks() - shootStart < 100 && shooting)
-	{
-		m_currentRow = 2;
-		m_currentFrame = 0;
-	}
-	else if (standing)
-	{
-		m_currentRow = 1;
-		m_currentFrame = 1;
-	}
-	else
-	{
-		m_currentRow = 1;
-		m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
 
-	}
 }
 
 void Player::handleInput()
 {	
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A) || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT) || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
 	{
 		standing = false;
 	}
@@ -117,17 +118,17 @@ void Player::handleInput()
 	{
 		standing = true;
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
 	{
-		move(MRIGHT);
+		move(1);
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
 	{
-		move(MLEFT);
+		move(-1);
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
 	{
-		move(MJUMP);
+		move(0);
 	}
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE))
 	{
@@ -137,22 +138,9 @@ void Player::handleInput()
 
 void Player::move(int dir)
 {
-	// get the current position
-	Vector2D newPos = m_position;
 	switch (dir){
 	case MRIGHT:
 		m_velocity.setX(2);
-		newPos.m_x = m_position.m_x + m_velocity.m_x;
-		if (!checkCollideTile(newPos))
-		{
-			// no collision, add to the actual x position
-			m_position.m_x = newPos.m_x;
-		}
-		else
-		{
-			// collision, stop x movement
-			m_velocity.m_x = 0;
-		}
 		break;
 	case MLEFT:
 		m_velocity.setX(-2);
