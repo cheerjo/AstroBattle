@@ -37,6 +37,7 @@ protected:
 	bool isStationary;
 	bool wasRight = false;
 	bool wasLeft = true;
+	bool checkCollideTile(Vector2D newPos);
 
 	std::string m_textureID;
 };

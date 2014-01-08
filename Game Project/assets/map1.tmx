@@ -29,7 +29,7 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="100" height="15">
-  <object name="helicopter" type="Player" x="327" y="305" width="46" height="34">
+  <object name="Player" type="Player" x="327" y="305" width="46" height="34">
    <properties>
     <property name="numFrames" value="2"/>
     <property name="textureHeight" value="46"/>
