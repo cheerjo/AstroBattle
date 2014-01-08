@@ -16,7 +16,8 @@ public:
 	virtual bool onEnter();
 	virtual bool onExit();
 	
-	bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
+	static bool checkCollision(Player* p1, Vector2D bullet);
+	static bool checkCollision(Enemy* p1, Vector2D bullet);
 
 	virtual std::string getStateID() const { return s_playID; }
 	static void addOb(GameObject* newObj);

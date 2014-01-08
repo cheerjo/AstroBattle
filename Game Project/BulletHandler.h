@@ -16,11 +16,12 @@ public:
 		}
 		return s_pInstance;
 	}
-	void add(Vector2D pos, int dir);
+	void add(Vector2D pos, int dir,int who);
 	int getNum(){ return bulletPos.size(); }
 	void update();
-	void remove(){}
+	void remove(int num);
 	std::vector<int> get(int num);
+	Vector2D getPos(int num);
 
 
 private:
@@ -29,6 +30,7 @@ private:
 	static BulletHandler* s_pInstance;
 	std::vector< Vector2D > bulletPos;
 	std::vector< int > bulletDir;
+	std::vector< int > bulletOwner;
 };
 
 typedef BulletHandler TheBulletHandler;

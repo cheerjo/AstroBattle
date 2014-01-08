@@ -25,7 +25,7 @@ void Player::update()
 {
 	if (jStart > -5)
 	{
-		if (Player::getPosition().getY() < (jStart - 40)){
+		if (Player::getPosition().getY() < (jStart - 80)){
 			jumping = false;
 			falling = true;
 			jStart = -5;
@@ -106,6 +106,17 @@ void Player::update()
 			Player::m_position.setY(0);
 		}
 	}
+	for (int i = 0; i < TheBulletHandler::Instance()->getNum(); i++)
+	{
+		if (PlayState::checkCollision(this, TheBulletHandler::Instance()->getPos(i)))
+		{
+			if (TheBulletHandler::Instance()->get(i).at(3) != PBULLET)
+			{
+				cout << "Player collided with Bullet #" << i << endl;
+				TheBulletHandler::Instance()->remove(i);
+			}
+		}
+	}
 }
 void Player::clean()
 {
@@ -166,8 +177,8 @@ void Player::shoot()
 {
 	if (shooting) return;
 	shooting = true;
-	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x+51, m_position.m_y+7), MRIGHT);
-	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x-14, m_position.m_y+7), MLEFT);
+	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x+51, m_position.m_y+7), MRIGHT,PBULLET);
+	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x-14, m_position.m_y+7), MLEFT,PBULLET);
 	shootStart = SDL_GetTicks();
 	
 }

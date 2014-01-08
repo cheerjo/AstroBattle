@@ -61,7 +61,7 @@ bool PlayState::onExit()
 	return GameState::onExit();
 }
 
-bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)
+bool PlayState::checkCollision(Player* p1, Vector2D bullet)
 {
 	int leftA, leftB,
 		rightA, rightB,
@@ -73,16 +73,41 @@ bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)
 	topA = p1->getPosition().getY();
 	bottomA = p1->getPosition().getY() + p1->getHeight();
 
-	leftB = p2->getPosition().getX();
-	rightB = p2->getPosition().getX() + p2->getWidth();
-	topB = p2->getPosition().getY();
-	bottomB = p2->getPosition().getY() + p2->getHeight();
+	leftB = bullet.m_x;
+	rightB = bullet.m_x + 27;
+	topB = bullet.m_y;
+	bottomB = bullet.m_y + 14;
 
 	//If any sides from A are outside B
 	if (bottomA <= topB){ return false; }
 	if (topA >= bottomB){ return false; }
 	if (rightA <= leftB){ return false; }
 	if (leftA >= rightB){ return false;	}
+
+	return true;
+}
+bool PlayState::checkCollision(Enemy* p1, Vector2D bullet)
+{
+	int leftA, leftB,
+		rightA, rightB,
+		topA, topB,
+		bottomA, bottomB;
+
+	leftA = p1->getPosition().getX();
+	rightA = p1->getPosition().getX() + p1->getWidth();
+	topA = p1->getPosition().getY();
+	bottomA = p1->getPosition().getY() + p1->getHeight();
+
+	leftB = bullet.m_x;
+	rightB = bullet.m_x + 27;
+	topB = bullet.m_y;
+	bottomB = bullet.m_y + 14;
+
+	//If any sides from A are outside B
+	if (bottomA <= topB){ return false; }
+	if (topA >= bottomB){ return false; }
+	if (rightA <= leftB){ return false; }
+	if (leftA >= rightB){ return false; }
 
 	return true;
 }

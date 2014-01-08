@@ -25,7 +25,7 @@ void Enemy::update()
 {
 	if (jStart > -5)
 	{
-		if (Enemy::getPosition().getY() < (jStart - 40)){
+		if (Enemy::getPosition().getY() < (jStart - 80)){
 			jumping = false;
 			falling = true;
 			jStart = -5;
@@ -106,6 +106,17 @@ void Enemy::update()
 			Enemy::m_position.setY(0);
 		}
 	}
+	for (int i = 0; i < TheBulletHandler::Instance()->getNum(); i++)
+	{
+		if (PlayState::checkCollision(this, TheBulletHandler::Instance()->getPos(i)))
+		{
+			if (TheBulletHandler::Instance()->get(i).at(3) != EBULLET)
+			{
+				cout << "Enemy collided with Bullet #" << i << endl;
+				TheBulletHandler::Instance()->remove(i);
+			}
+		}
+	}
 }
 void Enemy::clean()
 {
@@ -166,7 +177,7 @@ void Enemy::shoot()
 {
 	if (shooting) return;
 	shooting = true;
-	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x + 51, m_position.m_y + 7), MRIGHT);
-	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x - 14, m_position.m_y + 7), MLEFT);
+	if (wasRight)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x + 51, m_position.m_y + 7), MRIGHT,EBULLET);
+	else if (wasLeft)TheBulletHandler::Instance()->add(Vector2D(m_position.m_x - 14, m_position.m_y + 7), MLEFT,EBULLET);
 	shootStart = SDL_GetTicks();
 }

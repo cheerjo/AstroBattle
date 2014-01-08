@@ -6,7 +6,9 @@ enum move_dirs
 {
 	MLEFT = -1,
 	MRIGHT = 1,
-	MJUMP = 0
+	MJUMP = 0,
+	PBULLET = 4,
+	EBULLET = 8
 };
 class Player :
 	public SDLGameObject
