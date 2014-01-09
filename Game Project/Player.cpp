@@ -109,7 +109,7 @@ void Player::update()
 		{
 			if (TheBulletHandler::Instance()->get(i).at(3) != PBULLET)
 			{
-				TheGame::Instance()->changeScore(-1, 1);
+				TheGame::Instance()->changeScore(PLAYER);
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				//cout << "Player collided with Bullet #" << i << endl;
 				std::cout << "Player: " << TheGame::Instance()->getScores().at(0) << " Enemy: " << TheGame::Instance()->getScores().at(1) << std::endl;

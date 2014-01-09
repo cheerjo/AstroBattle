@@ -10,6 +10,7 @@
 #include "LevelParser.h"
 #include "CollisionManager.h"
 #include "SoundManager.h"
+#include "TextManager.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -37,11 +38,6 @@ void PlayState::update()
 void PlayState::render()
 {
 	pLevel->render();
-}
-
-void PlayState::addOb(GameObject* newObj)
-{
-	
 }
 
 bool PlayState::onEnter()

@@ -105,6 +105,9 @@
     <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -206,24 +209,24 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TextManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\animate.bmp">
+    <Image Include="assets\back.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\animate.png">
+    <Image Include="assets\blocks1.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\animate-alpha.png">
+    <Image Include="assets\blocks2.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\helicopter.png">
+    <Image Include="assets\bullet.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\helicopter2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\rider.bmp">
+    <Image Include="assets\bullets.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\button.png">
@@ -238,27 +241,44 @@
     <Image Include="assets\main.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\pbullet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\player1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="assets\restart.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\resume.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\newcreate.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\characters.jpg">
+    <Image Include="assets\title.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="test.xml">
+    <Media Include="assets\bang.wav">
       <Filter>Resource Files</Filter>
-    </Xml>
+    </Media>
+    <Media Include="assets\LASER1.WAV">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\map1.tmx">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="assets\map2.tmx">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="assets\test.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

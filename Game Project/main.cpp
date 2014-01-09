@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	Uint32 frameStart, frameTime;
 	std::cout << "game init attempt...\n";
-	if (TheGame::Instance()->init("Chapter 1", 100, 100, 640, 480, false))
+	if (TheGame::Instance()->init("Astro Battle", 100, 100, 640, 480, false))
 	{
 		while (TheGame::Instance()->running())
 		{

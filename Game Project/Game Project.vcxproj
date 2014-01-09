@@ -35,6 +35,7 @@
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="StateParser.cpp" />
+    <ClCompile Include="TextManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TileLayer.cpp" />
     <ClCompile Include="tinyxml\tinystr.cpp" />
@@ -71,6 +72,7 @@
     <ClInclude Include="SDLGameObject.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="StateParser.h" />
+    <ClInclude Include="TextManager.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TileLayer.h" />
     <ClInclude Include="tinyxml\tinystr.h" />
@@ -78,28 +80,32 @@
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\animate-alpha.png" />
-    <Image Include="assets\animate.bmp" />
-    <Image Include="assets\animate.png" />
+    <Image Include="assets\back.jpg" />
+    <Image Include="assets\blocks1.png" />
+    <Image Include="assets\blocks2.png" />
+    <Image Include="assets\bullet.png" />
+    <Image Include="assets\bullets.png" />
     <Image Include="assets\button.png" />
-    <Image Include="assets\characters.jpg" />
     <Image Include="assets\exit.png" />
     <Image Include="assets\gameover.png" />
-    <Image Include="assets\helicopter.png" />
-    <Image Include="assets\helicopter2.png" />
     <Image Include="assets\main.png" />
-    <Image Include="assets\newcreate.png" />
+    <Image Include="assets\pbullet.png" />
+    <Image Include="assets\player.png" />
+    <Image Include="assets\player1.png" />
     <Image Include="assets\restart.png" />
     <Image Include="assets\resume.png" />
-    <Image Include="assets\rider.bmp" />
+    <Image Include="assets\title.png" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="test.xml" />
+    <Media Include="assets\bang.wav" />
+    <Media Include="assets\LASER1.WAV" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\map1.tmx">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="assets\map1.tmx" />
+    <None Include="assets\map2.tmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="assets\test.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D24273D9-7D48-4CF6-AEC9-EA868886F2A1}</ProjectGuid>
@@ -149,7 +155,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2_mixer.lib;zdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2_TTF.lib;SDL2.lib;SDL2_image.lib;SDL2_mixer.lib;zdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -20,7 +20,6 @@ public:
 	static bool checkCollision(Enemy* p1, Vector2D bullet);
 
 	virtual std::string getStateID() const { return s_playID; }
-	static void addOb(GameObject* newObj);
 
 protected:
 	static const std::string s_playID;

@@ -5,6 +5,7 @@
 #include "PlayState.h"
 #include "MenuButton.h"
 #include "AnimatedGraphic.h"
+#include "TextManager.h"
 
 Game* Game::s_pInstance = 0;
 
@@ -64,6 +65,7 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	TheTextureManager::Instance()->load("assets/back.jpg", "background", TheGame::Instance()->getRenderer());
 	scores.push_back(0);
 	scores.push_back(0);
+	TheTextManager::Instance()->loadFont("assets/JourneyPS3.ttf", "journey", 45);
 	return true;
 }
 void Game::update()

@@ -108,7 +108,7 @@ void Enemy::update()
 		{
 			if (TheBulletHandler::Instance()->get(i).at(3) != EBULLET)
 			{
-				TheGame::Instance()->changeScore(1, -1);
+				TheGame::Instance()->changeScore(ENEMY);
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				//cout << "Enemy collided with Bullet #" << i << endl;
 				std::cout << "Player: " << TheGame::Instance()->getScores().at(0) << " Enemy: " << TheGame::Instance()->getScores().at(1) << std::endl;
@@ -148,7 +148,7 @@ void Enemy::handleInput()
 	{
 		move(MJUMP);
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_KP_ENTER))
 	{
 		shoot();
 	}

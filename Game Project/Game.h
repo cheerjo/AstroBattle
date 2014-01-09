@@ -7,6 +7,11 @@
 #include "Bullet.h"
 #include <vector>
 #include "GameStateMachine.h"
+enum players
+{
+	PLAYER = 4,
+	ENEMY = 8
+};
 class GameStateMachine;
 class Game
 {
@@ -53,13 +58,17 @@ public:
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 	GameStateMachine* getStateMachine(){ return m_pGameStateMachine; }
 
-	void changeScore(int pChange, int eChange)
+	void changeScore(int who)
 	{
-		int pNew = scores.at(0) + pChange;
-		int eNew = scores.at(1) + eChange;
-		scores.clear();
-		scores.push_back(pNew);
-		scores.push_back(eNew);
+		switch (who)
+		{
+		case PLAYER:
+			scores[0]++;
+			break;
+		case ENEMY:
+			scores[1]++;
+			break;
+		}
 	}
 
 	std::vector< int > getScores()
