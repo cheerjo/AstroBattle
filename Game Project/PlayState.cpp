@@ -35,7 +35,6 @@ void PlayState::update()
 	if (TheGame::Instance()->getScores()[0] == 0 || TheGame::Instance()->getScores()[1] == 0)
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
-		TheGame::Instance()->resetScores();
 	}
 }
 
@@ -44,7 +43,9 @@ void PlayState::render()
 	pLevel->render();
 
 	TextureManager::Instance()->drawFrame("numbers", 640 - 20, 0, 17, 27, 2, TheGame::Instance()->getScores()[1], TheGame::Instance()->getRenderer());
+	TheTextureManager::Instance()->draw("player2text", 640-20-131-10, 1, 131, 26, TheGame::Instance()->getRenderer());
 	TextureManager::Instance()->drawFrame("numbers", 3, 0, 17, 27, 1, TheGame::Instance()->getScores()[0], TheGame::Instance()->getRenderer());
+	TheTextureManager::Instance()->draw("player1text", 17+10, 1, 131, 26, TheGame::Instance()->getRenderer());
 }
 
 bool PlayState::onEnter()
@@ -58,6 +59,8 @@ bool PlayState::onEnter()
 	TheSoundManager::Instance()->load("assets/bang.wav", "explosion", SOUND_SFX);
 	std::cout << "entering PlayState\n";
 	SDL_ShowCursor(1);
+	TheTextureManager::Instance()->load("assets/player1texts.png", "player1text", TheGame::Instance()->getRenderer());
+	TheTextureManager::Instance()->load("assets/player2texts.png", "player2text", TheGame::Instance()->getRenderer());
 	return true;
 }
 
@@ -66,6 +69,8 @@ bool PlayState::onExit()
 	
 	std::cout << "Exiting PlayState\n";
 	SDL_ShowCursor(1);
+	TheTextureManager::Instance()->clearFromTextureMap("player1text");
+	TheTextureManager::Instance()->clearFromTextureMap("player2text");
 	return GameState::onExit();
 }
 

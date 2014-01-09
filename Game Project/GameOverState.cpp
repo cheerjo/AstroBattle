@@ -35,11 +35,22 @@ void GameOverState::render()
 	{
 		m_gameObjects[i]->draw();
 	}
+	TheTextureManager::Instance()->draw("winnertext", 245, 70, 149, 28, TheGame::Instance()->getRenderer());
+	if (winner == PLAYER)
+	{
+		TheTextureManager::Instance()->draw("player1text", 237, 100, 166, 32, TheGame::Instance()->getRenderer());
+	}
+	else
+	{
+		TheTextureManager::Instance()->draw("player2text", 234, 100, 172, 32, TheGame::Instance()->getRenderer());
+	}	
+	
 }
 
 bool GameOverState::onExit()
 {
 	std::cout << "exiting GameOverState\n";
+	TheGame::Instance()->resetScores();
 	return GameState::onExit();
 }
 
@@ -48,7 +59,6 @@ bool GameOverState::onEnter()
 	//parse the state
 	StateParser stateParser;
 	stateParser.parseState("assets/test.xml", s_gameOverID, &m_gameObjects, &m_textureIDList);
-
 	m_callbacks.push_back(0);
 	m_callbacks.push_back(s_gameOverToMain);
 	m_callbacks.push_back(s_restartPlay);
@@ -56,6 +66,18 @@ bool GameOverState::onEnter()
 	//set callbacks for menu items
 
 	setCallbacks(m_callbacks);
+
+	for (int i = 0; i < 2; i++)
+	{
+		if (TheGame::Instance()->getScores()[0] == 0)
+		{
+			winner = ENEMY;
+		}
+		else
+		{
+			winner = PLAYER;
+		}
+	}
 
 	std::cout << "entering GameOverState\n";
 	return true;
