@@ -63,12 +63,18 @@ public:
 		switch (who)
 		{
 		case PLAYER:
-			scores[0]++;
+			scores[0]--;
 			break;
 		case ENEMY:
-			scores[1]++;
+			scores[1]--;
 			break;
 		}
+	}
+
+	void resetScores()
+	{
+		scores[0] = 9;
+		scores[1] = 9;
 	}
 
 	std::vector< int > getScores()

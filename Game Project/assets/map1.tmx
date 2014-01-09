@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="21" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff">
+<map version="1.0" orientation="orthogonal" width="21" height="15" tilewidth="32" tileheight="32" backgroundcolor="#000000">
  <properties>
   <property name="bullet" value="assets/bullet.png"/>
+  <property name="numbers" value="assets/numbers.png"/>
   <property name="pbullet" value="assets/pbullet.png"/>
   <property name="player" value="assets/player.png"/>
   <property name="player1" value="assets/player1.png"/>

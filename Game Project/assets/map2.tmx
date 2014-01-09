@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="21" height="15" tilewidth="32" tileheight="32" backgroundcolor="#55aaff">
+<map version="1.0" orientation="orthogonal" width="21" height="15" tilewidth="32" tileheight="32" backgroundcolor="#000000">
  <properties>
   <property name="bullet" value="assets/bullet.png"/>
-  <property name="helicopter2" value="assets/helicopter2.png"/>
+  <property name="numbers" value="assets/numbers.png"/>
+  <property name="pbullet" value="assets/pbullet.png"/>
   <property name="player" value="assets/player.png"/>
+  <property name="player1" value="assets/player1.png"/>
  </properties>
  <tileset firstgid="1" name="Blocks" tilewidth="32" tileheight="32" spacing="2" margin="2">
   <image source="blocks1.png" width="614" height="376"/>
@@ -24,11 +26,11 @@
  </layer>
  <layer name="ForegroundBehind" width="21" height="15">
   <data encoding="base64" compression="zlib">
-   eJytUk0LwjAMTdGzN8X//5PmPKuwKvSmHiZzBxOasDD6sa4+eDR9S16TtQAT7ryeoR4n5QezeC3ahVqNX61nDDK/S+SkvsVAd7UzAKPSaO9gYqwfYmhWuX/xpVXiMZAfQjujRT6YcvY/QD5O9dXwGXaFl/yvRmlL510C8u2YpXd9QV6Rt4RW2usT+UK+M1oJNvhOtiav5fBV8YA8YP1HaXvjtR78G7CcdzQ+pvqetYFrfr5mQdI=
+   eJxjYBgFo2AUDHZwH4gfAPFDIF4Pxfeh9EMyzfwIxJ+A+DOS2HosYqQAZkYGBhZGwmKEwG8k9i8gFgPq/4EkJsoIEfsOZD8D4qdQdRKMEDZI/3eo2C+oHgBk6he7
   </data>
  </layer>
  <objectgroup name="Objects" width="21" height="15">
-  <object name="Player" type="Player" x="3" y="442" width="46" height="34">
+  <object name="Player" type="Player" x="5" y="443" width="46" height="34">
    <properties>
     <property name="numFrames" value="2"/>
     <property name="textureHeight" value="46"/>
@@ -36,18 +38,18 @@
     <property name="textureWidth" value="65"/>
    </properties>
   </object>
-  <object name="Enemy" type="Enemy" x="100" y="329" width="60" height="32">
+  <object name="Player1" type="Enemy" x="590" y="442" width="46" height="34">
    <properties>
-    <property name="numFrames" value="5"/>
-    <property name="textureHeight" value="55"/>
-    <property name="textureID" value="enemy"/>
-    <property name="textureWidth" value="128"/>
+    <property name="numFrames" value="2"/>
+    <property name="textureHeight" value="46"/>
+    <property name="textureID" value="player1"/>
+    <property name="textureWidth" value="65"/>
    </properties>
   </object>
  </objectgroup>
  <layer name="ForegroundInfront" width="21" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDFUgwTjQLoAAf6A7AqjsllageW1UNBMA2gcByA==
+   eJzdkNEJwCAMRM8J26XadYxO2H54NErEVIRCD0JEk5czwPdKEz0yeM/OuVmFlODZqvcwY8cP56HJVr0lKQxGe88c8fzljdjL/9NbQs1t53u42p8orvbo3cNI5MzsoCd6XcX7m7YA7GEt87h550LmBRRNKbA=
   </data>
  </layer>
 </map>

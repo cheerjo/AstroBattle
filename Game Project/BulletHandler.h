@@ -20,6 +20,12 @@ public:
 	int getNum(){ return bulletPos.size(); }
 	void update();
 	void remove(int num);
+	void removeAll()
+	{
+		bulletPos.clear();
+		bulletDir.clear();
+		bulletOwner.clear();
+	}
 	std::vector<int> get(int num);
 	Vector2D getPos(int num);
 

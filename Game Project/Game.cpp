@@ -63,9 +63,8 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, bo
 	TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 	m_pGameStateMachine->changeState(new MainMenuState());
 	TheTextureManager::Instance()->load("assets/back.jpg", "background", TheGame::Instance()->getRenderer());
-	scores.push_back(0);
-	scores.push_back(0);
-	TheTextManager::Instance()->loadFont("assets/JourneyPS3.ttf", "journey", 45);
+	scores.push_back(9);
+	scores.push_back(9);
 	return true;
 }
 void Game::update()

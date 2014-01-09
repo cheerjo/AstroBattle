@@ -3,10 +3,14 @@
 #include "TileLayer.h"
 #include "base64decoder\base64.h"
 #include "ObjectLayer.h"
+#include "BulletHandler.h"
 #include <zlib.h>
 
 Level* LevelParser::parseLevel(const char *levelFile)
 {
+	TheGame::Instance()->resetScores();
+	TheBulletHandler::Instance()->removeAll();
+	
 	//create a TinyXML document & loadd the map XML
 	TiXmlDocument levelDocument;
 	levelDocument.LoadFile(levelFile);

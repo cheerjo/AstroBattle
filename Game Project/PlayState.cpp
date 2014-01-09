@@ -32,12 +32,19 @@ void PlayState::update()
 		pLevel = levelParser.parseLevel("assets/map2.tmx");
 	}
 	pLevel->update();
-
+	if (TheGame::Instance()->getScores()[0] == 0 || TheGame::Instance()->getScores()[1] == 0)
+	{
+		TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
+		TheGame::Instance()->resetScores();
+	}
 }
 
 void PlayState::render()
 {
 	pLevel->render();
+
+	TextureManager::Instance()->drawFrame("numbers", 640 - 20, 0, 17, 27, 2, TheGame::Instance()->getScores()[1], TheGame::Instance()->getRenderer());
+	TextureManager::Instance()->drawFrame("numbers", 3, 0, 17, 27, 1, TheGame::Instance()->getScores()[0], TheGame::Instance()->getRenderer());
 }
 
 bool PlayState::onEnter()
